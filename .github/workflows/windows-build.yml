@@ -1,13 +1,10 @@
 name: Build Windows EXE
 
-on:
-  push:
-    branches: [main]
+on: [push]
 
 jobs:
   build:
     runs-on: windows-latest
-    
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -15,6 +12,8 @@ jobs:
         node-version: '18'
     - run: npm ci
     - run: npm run build:win
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
     - uses: actions/upload-artifact@v4
       with:
         name: SnakeGame-EXE
