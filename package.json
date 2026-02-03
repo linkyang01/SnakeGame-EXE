@@ -5,20 +5,13 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build:win": "electron-builder --win --publish never",
-    "build:mac": "electron-builder --mac",
-    "build:linux": "electron-builder --linux"
+    "build:win": "electron-builder --win --publish never"
   },
   "build": {
     "appId": "com.snake.game",
     "productName": "贪吃蛇游戏",
     "directories": {
       "output": "dist"
-    },
-    "publish": {
-      "provider": "generic",
-      "url": "https://example.com",
-      "publish": "never"
     },
     "win": {
       "target": "nsis",
